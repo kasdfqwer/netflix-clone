@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-useless-concat */
 import React, {useEffect, useState} from 'react'
 import { Container, Row, Col, Badge } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
@@ -19,7 +21,6 @@ const MovieDetail = () => {
 
   useEffect(()=> {
     detail();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showDetail])
   return (
     <Container>
