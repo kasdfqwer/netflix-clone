@@ -1,38 +1,382 @@
-.App {
-  text-align: center;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: #000;
+  color: rgba(255, 255, 255, .7);
+}
+* {
+  box-sizing: border-box;
+}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+/* loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+/* menu */
+.nav-area {margin-left: 30px;}
+.navbar {padding: 0 2.5%;}
+.nav-item {
+  margin: 20px;
+  color: #a2a2a2;
+}
+.nav-item:hover {
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* banner */
+.banner {
+  height: 860px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.banner:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%; height: 860px;
+  background: linear-gradient(to right, rgba(0,0,0, .7), transparent);
+} 
+.banner-info {
+  position: relative;
+  width: 40%;
+  margin-left: 5%;
+  z-index: 1;
+  color: #fff;
+}
+.banner-info h1 {
+  font-size: 100px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.banner-info p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, .75);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* contents ->home.js */
+.container {
+  width: 1100px;
+}
+.contents h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 400;
+}
+/* card */
+.card {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 30px;
+  border-color: #333;
+  cursor: pointer;
+  transition: all .3s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card:hover .card-overlay {
+  opacity: 1;
+}
+.card .card-overlay {
+  background: (0,0,0,.7);
+  width: 100%; height: 100%;
+  color: #fff;
+  padding: 20px;
+  transition: all .3s;
+  opacity: 0;
+}
+.card .card-overlay h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.card .card-overlay h1 .adult-info {
+  padding: 2px 5px;
+  font-size: 14px;
+  background: orange;
+  color: #fff;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.card .card-overlay .vote-group span {
+  margin: 0 5px;
+  font-size: 14px;
+  padding: 3px 4px;
+  border-radius: 2px;
+  margin: 0 3px;
+}
+.genre {
+  margin-bottom: 10px;
+}
+.genre span {
+  margin-right: 5px;
+}
+.genre .bg-danger {
+  background-color: red!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.detail-section {
+  justify-content: space-between;
+  padding: 100px 0 80px;
+}
+.detail-img {
+  width: 400px; height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.detail-title {
+  font-size: 40px;
+  color: #fff;
+}
+.detail-title .detail-adult {
+  font-size: 16px;
+  margin-left: 10px;
+  background: orange;
+  padding: 2px 5px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.people-area {
+  width: 1460px;
+  margin: 20px auto 0;
+}
+.people-area h1 {
+  margin-bottom: 30px;
+}
+.people-area .area-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.people-card {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+
+.people-imgBox {
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.people-title {
+  width: 100%;
+  font-size: 30px;
+  color: #fff;
+}
+.known {
+  display: inline-block;
+  padding: 2px 5px;
+  background: red;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.known_for span {
+  display: block;
+  word-break: keep-all;
+  margin-bottom: 2px;
+  color: rgba(255, 255, 255, .7);
+}
+.people-score {
+  display: inline-block;
+  color: #000;
+  padding: 2px 5px ;
+  background: rgb(199, 176, 0);
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.main-imgBox {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: url(../src/mainbg.jpg) no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blackCover {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgb(0, 0, 0, 40%); 
+}
+
+.main-imgBox .title-area {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 3;
+}
+.main-imgBox .title-area h2 {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.main-imgBox .title-area p {
+  font-size: 22px;
+  color: #fff;
+}
+.start {
+  margin-top: 30px;
+  font-size: 30px;
+  background: rgb(206, 0, 0);
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: all .3s;
+}
+.start:hover {
+  background: rgb(241, 0, 0);
+}
+.trending-card {
+  width: 220px;
+  height: 330px;
+}
+.tv-cardBox {
+  width: 220px;
+}
+.tv-card {
+    width: 220px;
+    height: 300px;
+    margin-bottom: 30px;
+    border-color: #333;
+    cursor: pointer;
+    transition: all .3s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 30px;
+  border-color: #333;
+  cursor: pointer;
+  transition: all .3s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.tv-card:hover {
+  transform: scale(1.1);
+}
+.tv-card:hover .card-overlay {
+  opacity: 1;
+}
+.tv-card .card-overlay {
+  background: (0,0,0,.7);
+  width: 100%; height: 100%;
+  color: #fff;
+  padding: 20px;
+  transition: all .3s;
+  opacity: 0;
+}
+.tv-card .card-overlay h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.tv-card .card-overlay h1 .adult-info {
+  padding: 2px 5px;
+  font-size: 14px;
+  background: orange;
+  color: #fff;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.tv-card .card-overlay .vote-group span {
+  margin: 0 5px;
+  font-size: 14px;
+  padding: 3px 4px;
+  border-radius: 2px;
+  margin: 0 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-multi-carousel-list   {
+  margin: 0 100px;
+}
+
+.Home-inner h2 {
+  margin: 30px 0 30px 50px;
+  color: #fff;
+}
+.trending-slideArea button {
+  display: none;
+}
+
+.contents h2 {
+  margin: 30px 0 30px 50px;
+  color: #fff;
+}
+
+.vote-average {
+  background: rgba(255, 204, 0, 0.768);
+  color: #111;
+  border-radius: 5px;
+  padding: 2px 5px;
+  box-sizing: border-box;
+}
+.detail-info2 > div {
+  color: #efefef;
+  margin-bottom: 5px;
+}
+.detail-info2 div span {
+  margin-right: 5px;
+}
+.genre-badge span {
+  margin-right: 5px;
+}
+.video-area {
+  margin-top: 10px;
+}
+
+.review-box .review-title {
+  font-size: 40px;
+  color: yellow;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+.review-box .review-btns {
+  margin-bottom: 20px;
+}
+.review-box .review-area {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.review-area h4 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
 }
