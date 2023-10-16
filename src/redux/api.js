@@ -9,20 +9,20 @@ const api = axios.create({
 
 api.interceptors.request.use(function (config) {
     //요청이 전달되기 전에 작업 수행
-    console.log("request start", config) //개발자가 확인용으로 쓰는 것
+    /* console.log("request start", config) */ //개발자가 확인용으로 쓰는 것
     return config
 }, function (error) {
     //요청 오류가 작업 수행
-    console.llg("request error", error)
+    /* console.log("request error", error) */
     return Promise.reject(error);
 }
 )
 
 api.interceptors.response.use(function (response) {
-    console.log("get response", response);
+    /* console.log("get response", response); */
     return response;
 }, function (error) {
-    console.log("get error", error)
+    /* console.log("get error", error) */
     return Promise.reject(error)
 }
 )

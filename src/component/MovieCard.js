@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from 'react'
 import { Badge } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
@@ -23,7 +24,7 @@ const MovieCard = ({ item }) => {
               {item.title} 
             <span className="adult-info">{item.adult? "18+" : "18-" }</span>
             </h1>
-            <div class="vote-averageBox">
+            <div className="vote-averageBox">
               <span className="vote-average">
                     score {item.vote_average}
                     </span>

@@ -1,11 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
 
 const PopularPeopleCard = ( {thing}) => {
-    /* let navigate = useNavigate(); */
-
-    /* const {popularPeople} = useSelector(state=>state.people) */
   return (
     <>
     <div className="people-card">

@@ -3,6 +3,7 @@ import React from 'react'
 const Banner = ({movie}) => {
   return (
     <div style={{
+        // eslint-disable-next-line no-useless-concat
         backgroundImage: "url(" + `https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/${movie.poster_path}` + ")"
     }} className='banner'>
       <div className="banner-info">

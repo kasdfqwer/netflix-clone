@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import mainbg from '../mainbg.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import Loading from '../component/Loading';
 import { TrendingAction } from '../redux/action/TrendingAction';
@@ -13,6 +12,7 @@ const Home = () => {
 
     useEffect(()=> {
         dispatch(TrendingAction.getTrending())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (loading) {

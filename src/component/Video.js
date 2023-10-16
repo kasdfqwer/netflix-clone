@@ -25,6 +25,7 @@ const Video = () => {
   
     useEffect(() => {
         showVideo();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [youtube]);
 
   return (

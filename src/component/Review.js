@@ -6,7 +6,6 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Review = () => {
   let [review, setReview] = useState(null || {});
-  let [showContent, setShowContent] = useState(false);
   let { id } = useParams();
 
   const showReviews = async () => {
@@ -20,6 +19,7 @@ const Review = () => {
   useEffect(() => {
     showReviews();
    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [review]);
 
 

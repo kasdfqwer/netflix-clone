@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Badge } from 'react-bootstrap';
@@ -23,7 +24,7 @@ const TvCard = ({tvitem}) => {
               {tvitem.original_name}
               <span className="adult-info">{tvitem.adult? "18+" : "18-" }</span>
             </h1>
-            <div class="vote-averageBox">
+            <div className="vote-averageBox">
               <span className="vote-average">
                     score {tvitem.vote_average}
                     </span>

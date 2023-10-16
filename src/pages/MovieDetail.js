@@ -19,6 +19,7 @@ const MovieDetail = () => {
 
   useEffect(()=> {
     detail();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showDetail])
   return (
     <Container>

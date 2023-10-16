@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const TrendingCard = ({ item }) => {
+    // eslint-disable-next-line no-unused-vars
     let navigate = useNavigate();
 
   return (

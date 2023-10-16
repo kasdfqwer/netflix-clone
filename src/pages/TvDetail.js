@@ -16,6 +16,7 @@ const TvDetail = () => {
 
     useEffect(()=> {
         detail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tvDetail])
     
   return (

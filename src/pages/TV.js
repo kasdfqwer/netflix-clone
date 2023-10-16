@@ -12,6 +12,7 @@ const TV = () => {
 
   useEffect(()=> {
     dispatch(TvAction.getTv())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading) {

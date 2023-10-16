@@ -10,6 +10,7 @@ const People = () => {
 
   useEffect(() => {
     dispatch(popularAction.getPeople())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
